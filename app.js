@@ -1,4 +1,5 @@
 const express = require('express')
+const sequelize = require('./src/config/database')
 
 const app = express()
 const PORT = 3000
@@ -12,3 +13,12 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is runing at http://localhost:${PORT}`)
 })
+
+sequelize.authenticate()
+    .then(() => {
+        console.log('Database connected')
+    })
+    .catch((error) => {
+        console.error('Unable to connect to the database:', error)
+    })
+
