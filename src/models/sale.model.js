@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../config/database')
 
-const sale = sequelize.define('Sale', {
+const Sale = sequelize.define('Sale', {
     saleId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -40,5 +40,4 @@ const sale = sequelize.define('Sale', {
        
 })
 
-module.exports = sale
-
+module.exports = Sale
